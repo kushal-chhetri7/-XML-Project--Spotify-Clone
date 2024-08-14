@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div id="user-info">
+                <button id="authorize-btn">Authorize</button>
+            </div>
+            <div id="user-playlists">
+                <div class="playlist-header">
+                    <h3 style="display: none;" id="playlists-list-txt">Playlists</h3>
+                    <button id="create-playlist-btn" class="create-playlist-btn" style="display:none;">+</button>
+                </div>
+                <ul id="playlists-list"></ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <input type="text" id="search-bar" placeholder="What do you want to play?">
+            <button id="search-btn">Search</button>
+            <div id="track-results"></div>
+        </div>
+
+        <script src="js/auth.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/main.js"></script>
+    </div>
+</body>
+</html>

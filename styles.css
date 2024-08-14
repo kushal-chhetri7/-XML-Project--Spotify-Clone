@@ -1,0 +1,322 @@
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   height: 100vh;
+   background-color: #000;
+}
+
+.container {
+   display: flex;
+   width: 100%;
+   height: 100%;
+}
+
+.sidebar {
+   width: 20%;
+   background-color: #121212;
+   color: #fff;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   border-radius: 1rem 1rem;
+   margin: 1rem 1rem;
+  
+}
+
+#authorize-btn {
+   padding: 10px 20px;
+   background-color: #1DB954;
+   border: none;
+   color: white;
+   cursor: pointer;
+   text-align: center;
+   width: 100%;
+   margin-bottom: 20px;
+   font-size: 16px;
+   border-radius: 4px;
+   transition: background-color 0.3s;
+}
+
+#authorize-btn:hover {
+   background-color: #1ed760;
+}
+
+.playlist-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+.playlist-header h3 {
+   margin: 0;
+   font-size: 16px;
+}
+
+.create-playlist-btn {
+   padding: 5px 11px;
+   background-color: #1DB954;
+   border: none;
+   color: white;
+   cursor: pointer;
+   border-radius: 50%;
+   font-size: 20px;
+}
+
+.create-playlist-btn:hover::after {
+
+   position: absolute;
+   background-color: #1DB954;
+   padding: 5px 10px;
+   border-radius: 5px;
+   margin-left: 5px;
+   font-size: 12px;
+}
+
+.add-playlist-btn {
+   padding: 5px 10px;
+   background-color: #1DB954;
+   border: none;
+   color: white;
+   cursor: pointer;
+   border-radius: 50%;
+   font-size: 20px;
+}
+
+.add-playlist-btn:hover::after {
+   content: 'Add to Playlist';
+   position: absolute;
+   background-color: #1DB954;
+   padding: 5px 10px;
+   border-radius: 5px;
+   margin-left: 5px;
+   font-size: 12px;
+}
+
+.btn-playlist {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+}
+
+.playlist-info-container {
+   display: flex;
+}
+
+.playlist-item {
+   display: flex;
+   align-items: center;
+   background-color: #121212;
+   color: white;
+   font-weight: bold;
+   padding: 10px;
+   margin-bottom: 10px;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+.playlist-item img {
+   border-radius: 4px;
+   width: 50px;
+   height: 50px;
+   margin-right: 10px;
+}
+
+.playlist-item:hover {
+   background-color: #121212;
+}
+
+.playlist-item .playlist-info {
+   display: flex;
+   flex-direction: column;
+}
+
+.playlist-item .playlist-info .playlist-name {
+   font-size: 16px;
+   margin: 0;
+}
+
+.playlist-item .playlist-info .playlist-owner {
+   font-size: 12px;
+   color: #ccc;
+}
+
+.main-content {
+   width: 80%;
+   flex-grow: 1;
+   padding: 20px;
+   background-color: #000;
+}
+
+#user-info {
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+#playlists-list {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+#playlists-list li {
+   margin-bottom: 10px;
+}
+
+#search-bar {
+   margin-top: 1rem;
+   width: calc(100% - 200px);
+   padding: 12px;
+   margin-bottom: 15px;
+   border-radius: 7px;
+   background-color: #f0f0f0;
+   font-size: large;
+
+}
+
+#search-btn {
+   padding: 15px 25px;
+   margin-left: 10px;
+   width: 150px;
+   background-color: #1DB954;
+   color: white;
+   border: none;
+   cursor: pointer;
+   border-radius: 3px;
+   font-size: 15px;
+}
+
+#track-results {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr); /* 4 columns */
+   grid-template-rows: repeat(4, 1fr); /* 4 rows */
+   gap: 20px; /* Gap between cards */
+   margin-top: 20px;
+}
+.track-item {
+   position: relative; /* Make the track-item a containing block for positioning */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   background-color: #121212; /* Background color for the card */
+   padding: 0; /* Remove padding to allow the image to fill the card */
+   border-radius: 8px;
+   overflow: hidden; /* Ensure content doesn't overflow the card */
+   transition: background-color 0.3s;
+   height: 350px; /* Adjust height to fit your design */
+   width: 100%; /* Full width within grid cell */
+   color: #fff;
+}
+
+.track-item img {
+   width: 100%; /* Make the image as wide as the card */
+   height: 65%; /* Make the image as tall as the card */
+   object-fit: cover; /* Ensure the image covers the entire card without distortion */
+   border-radius: 4px 4px 0 0; /* Optional: rounded corners for the image */
+}
+
+.track-item h3 {
+   margin: 0;
+   padding: 10px 0;
+   font-size: 16px;
+   color: white;
+   background-color: rgba(0, 0, 0, 0.7); /* Background for title to make it readable */
+   width: 100%;
+   text-align: center;
+   position: absolute;
+   top: 190px;
+   left: 0;
+}
+
+.track-item .add-to-playlist-btn {
+
+   bottom: 25px;
+
+   padding: 10px 15px;
+   background-color: #1ed760; /* Semi-transparent background */
+   border: none;
+   color: white;
+   cursor: pointer;
+   border-radius: 2px;
+   font-size: 18px;
+   transition: background-color 0.3s;
+   text-align: center;
+}
+
+
+
+
+.music-player p {
+   margin: 5px 0;
+   font-size: 18px;
+   display: none;
+   color: #fff;
+}
+
+.music-player audio {
+   margin-top: 20px;
+   width: 100%;
+   max-width: 500px;
+}
+
+.popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+}
+
+.popup-content {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   width: 300px;
+   text-align: center;
+   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h3 {
+   margin-bottom: 20px;
+}
+
+.popup-content select {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 20px;
+   border-radius: 4px;
+   border: 1px solid #ddd;
+}
+
+.popup-content button {
+   padding: 10px 20px;
+   background-color: #1DB954;
+   border: none;
+   color: white;
+   cursor: pointer;
+   border-radius: 4px;
+   font-size: 14px;
+}
+
+.popup-content button:hover {
+   background-color: #1ed760;
+}
+
+.close {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   font-size: 24px;
+   cursor: pointer;
+}
