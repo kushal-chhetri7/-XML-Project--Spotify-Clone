@@ -8,7 +8,6 @@ function displayUserInfo(user) {
     $("#playlists-list-txt").show();
     $("#create-playlist-btn").show();  
 }
-
 function displayUserPlaylists(playlists) {
     localStorage.setItem('user_playlists', JSON.stringify(playlists.items));
     
